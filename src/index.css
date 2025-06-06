@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #afbdbd ;
+}
+
+.sales-website {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #102929;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header input {
+  margin-top: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+.header nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  width: calc(30% - 40px); /* Adjusting for margins */
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.product button:hover {
+  background-color: #45a049;
+}
+
+/*product item*/
+.product {
+  background-color: #f0f0f0; /*light color for the item*/
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s, background-color 0.3s;/* Smooth transition for transform and background color*/
+}
+
+/* Hover effect */
+.product:hover {
+  transform: translateY(-10px); /*lifts the item up*/
+  background-color: #d0d0d0; /*darker color no hover*/
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.pagination button {
+  margin: 0 5px;
+}
+.pagination button.active {
+  font-weight: bold;
+}
+
+.toggle input:active ~ .button {
+  filter: blur(0.5px);
+  box-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+}
+
+.toggle input:active ~ .label {
+  font-size: 26px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.toggle input:checked ~ .button {
+  filter: blur(0.5px);
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
+}
+
+.toggle input:checked ~ .label {
+  color: rgba(0, 0, 0, 0.8);
+}
+
