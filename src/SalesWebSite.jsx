@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 
 // Sample data: list of products for sale
 const products = [
-    { id: 1, name: 'Tools', image: '../public/images/Tools.jpeg' },
-    { id: 2, name: 'Work Drill', image: '../public/images/drills.jpeg' },
-    { id: 3, name: 'Water Pump', image: '../public/images/waterpumps.jpeg' },
-    { id: 4, name: 'Driver', image: '../public/images/screw drivers.jpeg' },
-    { id: 5, name: 'Pressure washer', image: '../public/images/pressure washers.jpeg' },
-    { id: 6, name: 'Solars', image: '../public/images/solar.jpeg' },
-    { id: 7, name: 'Inverter', image: '../public/images/solar inverter.jpeg' },
-    { id: 8, name: 'Solar Pumps',image: '../public/images/Solar pumps.jpeg' },
-    { id: 9, name: 'Power Saws',image: '../public/images/power saws.jpeg' },
-    { id: 10, name: 'Solar inverter',image: '../public/images/mini inverters.jpeg' },
-    { id: 11, name: 'Drills',image: '../public/images/drills.jpeg' },
-    { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpeg' },
-    { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpeg'},
-    { id: 14, name: 'Motor', image: '../public/images/motor.jpeg'}
+    { id: 1, name: 'Tools', image: '../public/images/Tools.jpg' },
+    { id: 2, name: 'Work Drill', image: '../public/images/drills.jpg' },
+    { id: 3, name: 'Water Pump', image: '../public/images/waterpumps.jpg' },
+    { id: 4, name: 'Driver', image: '../public/images/screw drivers.jpg' },
+    { id: 5, name: 'Pressure washer', image: '../public/images/pressure washers.jpg' },
+    { id: 6, name: 'Solars', image: '../public/images/solar.jpg' },
+    { id: 7, name: 'Inverter', image: '../public/images/solar inverter.jpg' },
+    { id: 8, name: 'Solar Pumps',image: '../public/images/Solar pumps.jpg' },
+    { id: 9, name: 'Power Saws',image: '../public/images/power saws.jpg' },
+    { id: 10, name: 'Solar inverter',image: '../public/images/mini inverters.jpg' },
+    { id: 11, name: 'Drills',image: '../public/images/drills.jpg' },
+    { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpg' },
+    { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpg'},
+    { id: 14, name: 'Motor', image: '../public/images/motor.jpg'}
 ];
 
 // Main sales website component
@@ -62,7 +62,7 @@ function SalesWebsite() {
                         <img src={product.image} alt={product.name} />
                         <h2>{product.name}</h2>
                         <p>{product.description}</p>
-                        <p>${product.price}</p>
+                        
                         <button>Add to Cart</button>
                     </div>
                 ))}
