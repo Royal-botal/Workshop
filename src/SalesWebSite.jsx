@@ -14,7 +14,7 @@ const products = [
     { id: 8, name: 'Solar Pumps',image: '../public/images/Solar pumps.jpg' },
     { id: 9, name: 'Power Saws',image: '../public/images/power saws.jpg' },
     { id: 10, name: 'Solar inverter',image: '../public/images/mini inverters.jpg' },
-    { id: 11, name: 'Drills',image: '../public/images/drills.jpg' },
+    { id: 11, name: 'Drills',image: '../publ/icimages/drills.jpg' },
     { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpg' },
     { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpg'},
     { id: 14, name: 'Motor', image: '../public/images/motor.jpg'}
