@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 
 // Sample data: list of products for sale
 const products = [
-    { id: 1, name: 'Washing Machine', description: 'A high performance laptop for all purposes.', price: 999, image: 'path/to/laptop.jpg' },
-    { id: 2, name: 'Work Drill', description: 'A DSLR camera for professional photography.', price: 599, image: 'path/to/camera.jpg' },
-    { id: 3, name: 'Tools', description: 'Noise-cancelling over-ear headphones.', price: 199, image: 'path/to/headphones.jpg' },
-    { id: 4, name: 'Driver', description: 'A sleek digital watch with various features.', price: 149, image: 'path/to/watch.jpg' },
-    { id: 5, name: 'Pressure', description: 'Latest smartphone with advanced capabilities.', price: 799, image: 'path/to/smartphone.jpg' },
-    { id: 6, name: 'Tablet', description: 'A versatile tablet for work and play.', price: 299, image: 'path/to/tablet.jpg' },
-    { id: 7, name: 'Hosepipe', description: 'Bluetooth speaker with high sound quality.', price: 89, image: 'path/to/speaker.jpg' },
-    { id: 8, name: 'Monitor', description: 'A high-resolution display for all your needs.', price: 199, image: 'path/to/monitor.jpg' },
-    { id: 9, name: 'Motherboard', description: 'Mechanical keyboard with customizable keys.', price: 129, image: 'path/to/keyboard.jpg' },
-    { id: 10, name: 'Mouse', description: 'Ergonomic mouse for comfortable use.', price: 59, image: 'path/to/mouse.jpg' },
-    { id: 11, name: 'Book', description: 'White graphic book for perfect writing.', price: 19, image: 'path/to/book.jpg' },
-    { id: 12, name: 'Pages', description: 'With ferry services.', price: 5, image: 'path/to/pages.jpg' }
+    { id: 1, name: 'Tools', image: '../public/images/Tools.jpeg' },
+    { id: 2, name: 'Work Drill', image: '../public/images/drills.jpeg' },
+    { id: 3, name: 'Water Pump', image: '../public/images/waterpumps.jpeg' },
+    { id: 4, name: 'Driver', image: '../public/images/screw drivers.jpeg' },
+    { id: 5, name: 'Pressure washer', image: '../public/images/pressure washers.jpeg' },
+    { id: 6, name: 'Solars', image: '../public/images/solar.jpeg' },
+    { id: 7, name: 'Inverter', image: '../public/images/solar inverter.jpeg' },
+    { id: 8, name: 'Solar Pumps',image: '../public/images/Solar pumps.jpeg' },
+    { id: 9, name: 'Power Saws',image: '../public/images/power saws.jpeg' },
+    { id: 10, name: 'Solar inverter',image: '../public/images/mini inverters.jpeg' },
+    { id: 11, name: 'Drills',image: '../public/images/drills.jpeg' },
+    { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpeg' }
 ];
 
 // Main sales website component
