@@ -15,7 +15,9 @@ const products = [
     { id: 9, name: 'Power Saws',image: '../public/images/power saws.jpeg' },
     { id: 10, name: 'Solar inverter',image: '../public/images/mini inverters.jpeg' },
     { id: 11, name: 'Drills',image: '../public/images/drills.jpeg' },
-    { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpeg' }
+    { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpeg' },
+    { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpeg'},
+    { id: 14, name: 'Motor', image: '../public/images/motor.jpeg'}
 ];
 
 // Main sales website component
