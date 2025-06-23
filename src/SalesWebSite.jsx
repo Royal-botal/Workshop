@@ -1,88 +1,153 @@
 import React, { useState } from 'react';
-import './index.css'; // Make sure to create a corresponding CSS file for styles.
-import { Link } from 'react-router-dom';
+import './index.css';
 
-// Sample data: list of products for sale
-const products = [
-    { id: 1, name: 'Tools', image: '../public/images/Tools.jpg' },
-    { id: 2, name: 'Work Drill', image: '../public/images/drills.jpg' },
-    { id: 3, name: 'Water Pump', image: '../public/images/waterpumps.jpg' },
-    { id: 4, name: 'Driver', image: '../public/images/screw drivers.jpg' },
-    { id: 5, name: 'Pressure washer', image: '../public/images/pressure washers.jpg' },
-    { id: 6, name: 'Solars', image: '../public/images/solar.jpg' },
-    { id: 7, name: 'Inverter', image: '../public/images/solar inverter.jpg' },
-    { id: 8, name: 'Solar Pumps',image: '../public/images/Solar pumps.jpg' },
-    { id: 9, name: 'Power Saws',image: '../public/images/power saws.jpg' },
-    { id: 10, name: 'Solar inverter',image: '../public/images/mini inverters.jpg' },
-    { id: 11, name: 'Drills',image: '../publ/icimages/drills.jpg' },
+// Product data organized by categories
+const productCategories = {
+  Tools: [
+    { id: 1, name: 'Work Drill', image: '../public/images/drills.jpg' },
+    { id: 2, name: 'Driver', image: '../public/images/screw drivers.jpg' },
+    { id: 3, name: 'Power Saws', image: '../public/images/power saws.jpg' }
+  ],
+  Pumps: [
+    { id: 4, name: 'Water Pump', image: '../public/images/waterpumps.jpg' },
+    { id: 5, name: 'Solar Pumps', image: '../public/images/Solar pumps.jpg' }
+  ],
+  Cleaning: [
+    { id: 6, name: 'Pressure washer', image: '../public/images/pressure washers.jpg' }
+  ],
+  Solar: [
+    { id: 7, name: 'Solars', image: '../public/images/solar.jpg' },
+    { id: 8, name: 'Inverter', image: '../public/images/solar inverter.jpg' },
+    { id: 9, name: 'Mini Inverter', image: '../public/images/mini inverters.jpg' }
+  ],
+  PowerTools: [
+    { id: 10, name: 'Various Tools', image: '../public/images/Tools.jpg' },
+    { id: 11, name: 'Drill Sets', image: '../public/images/drills.jpg' }
+  ],
+  Other: [
     { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpg' },
-    { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpg'},
-    { id: 14, name: 'Motor', image: '../public/images/motor.jpg'}
-];
+    { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpg' },
+    { id: 14, name: 'Motor', image: '../public/images/motor.jpg' }
+  ]
+};
 
-// Main sales website component
+// Flat array for initial display of main categories
+const mainCategories = Object.keys(productCategories).map((category, index) => ({
+  id: index + 100,
+  name: category,
+  image: productCategories[category][0].image // Use first item's image as category image
+}));
+
 function SalesWebsite() {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 9;
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentCategory, setCurrentCategory] = useState(null);
+  const [viewMode, setViewMode] = useState('categories'); // 'categories' or 'products'
+  const itemsPerPage = 9;
 
-    // Filter products based on search term on letter
-    const filteredProducts = products.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+  // Get current items to display
+  const currentItems = viewMode === 'categories' ? 
+    mainCategories : 
+    productCategories[currentCategory] || [];
+  
+  // Search bar section to Filter items based on search term
+  const filteredItems = currentItems.filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-    // Get current products for the current page
-    const currentProducts = filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  // Paginate items
+  const paginatedItems = filteredItems.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
-    // Calculate total pages
-    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const handleCategoryClick = (categoryName) => {
+    setCurrentCategory(categoryName);
+    setViewMode('products');
+    setCurrentPage(1);
+  };
 
-    return (
-        <div className="sales-website">
-            {/* Header */}
-            <header className="header">
-                <h1></h1>
-                <input 
-                    type="text" 
-                    placeholder="Search for products..." 
-                    value={searchTerm} 
-                    onChange={(e) => setSearchTerm(e.target.value)} 
-                />
-                <nav>
-                    <ul>
-                        
-                    </ul>
-                </nav>
-            </header>
+  const handleBackToCategories = () => {
+    setViewMode('categories');
+    setCurrentPage(1);
+  };
 
-            {/* Products Section */}
-            <main className="products">
-                {currentProducts.map(product => (
-                    <div key={product.id} className="product">
-                        <img src={product.image} alt={product.name} />
-                        <h2>{product.name}</h2>
-                        <p>{product.description}</p>
-                        
-                        <button>Add to Cart</button>
-                    </div>
-                ))}
-            </main>
+  return (
+    <div className="sales-website">
+      {/* Header with search */}
+      <header className="header">
+        <h1>{viewMode === 'products' ? currentCategory : 'Product Categories'}</h1>
+        <input 
+          type="text" 
+          placeholder={`Search ${viewMode === 'categories' ? 'categories' : 'products'}...`} 
+          value={searchTerm} 
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setCurrentPage(1);
+          }} 
+        />
+      </header>
 
-            {/* Pagination */}
-            <div className="pagination">
-                {Array.from({ length: totalPages }, (_, index) => (
-                    <button 
-                        key={index + 1} 
-                        onClick={() => setCurrentPage(index + 1)}
-                        className={currentPage === index + 1 ? 'active' : ''}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
-            </div>
+      {/* Main content */}
+      <main className="products">
+        {/* Back button when viewing products */}
+        {viewMode === 'products' && (
+          <button 
+            className="back-button" 
+            onClick={handleBackToCategories}
+          >
+            ← Back to Categories
+          </button>
+        )}
 
+        {/* Items grid */}
+        {paginatedItems.length > 0 ? (
+          <div className="items-grid">
+            {paginatedItems.map(item => (
+              <div 
+                key={item.id} 
+                className="product-card"
+                onClick={() => viewMode === 'categories' ? handleCategoryClick(item.name) : null}
+              >
+                <div className="image-container">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    onError={(e) => {
+                      e.target.src = '../public/images/default-product.jpg';
+                      e.target.onerror = null;
+                    }}
+                  />
+                </div>
+                <h3>{item.name}</h3>
+                {viewMode === 'categories' && (
+                  <p className="view-products">View products →</p>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="no-items">No {viewMode === 'categories' ? 'categories' : 'products'} found.</p>
+        )}
+      </main>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="pagination">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button 
+              key={index + 1} 
+              onClick={() => setCurrentPage(index + 1)}
+              className={currentPage === index + 1 ? 'active' : ''}
+            >
+              {index + 1}
+            </button>
+          ))}
         </div>
-    );
+      )}
+    </div>
+  );
 }
 
 export default SalesWebsite;

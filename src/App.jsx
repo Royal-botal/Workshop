@@ -6,6 +6,7 @@ import Contact from './Contact';
 import Navbar from './Navbar'; // Import the Navbar component
 import Footer from './Footer'; 
 
+
 function App() {
     return (
         <Router>
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/" exact element={<SalesWebsite/>} />
                 <Route path="/about" element={<About/>} />
                 <Route path="/contact" element={<Contact/>} />
+                <Route path="/Footer" element={<Footer/>} />
            </Routes>
         </Router>
     );
