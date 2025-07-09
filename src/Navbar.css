@@ -69,9 +69,9 @@
 
 .logo-image-text .logo-text {
     display: inline-block;
-    background: url('/Public/images/essentials.jpg') left center/33% 100% no-repeat,
-                url('/Public/images/drills.jpg') center center/33% 100% no-repeat,
-                url('/Public/images/solar.jpg') right center/34% 100% no-repeat;
+    background: url('/images/essentials.jpg') left center/33% 100% no-repeat,
+                url('/images/drills.jpg') center center/33% 100% no-repeat,
+                url('/images/solar.jpg') right center/34% 100% no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

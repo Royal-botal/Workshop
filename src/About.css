@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .about-hero {
-    background-image: url('../public/images/essentials.jpg');
+    background-image: url('/images/essentials.jpg');
     background-size: cover;
     background-position: center;
     height: 320px;
@@ -177,13 +177,13 @@
     border-bottom-right-radius: 12px;
 }
 .service-card.quality {
-    background-image: url('../public/images/quality.jpg');
+    background-image: url('/images/quality.jpg');
 }
 .service-card.support {
-    background-image: url('../public/images/support.png');
+    background-image: url('/images/support.png');
 }
 .service-card.delivery {
-    background-image: url('../public/images/fast.png');
+    background-image: url('/images/fast.png');
 }
 
 /* Team Section */

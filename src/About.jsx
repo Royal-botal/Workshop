@@ -21,7 +21,7 @@ function About() {
                     <p>LongTerm was named a Greater Kansas City Chamber of Commerce 2024 Small Business Superstar and is a Minority Business Enterprise certified by the government. We are committed to providing quality products and services tailored to our customers' needs.</p>
                 </div>
                 <div className="about-image">
-                    <img src="/Public/images/essentials.jpg" alt="About LongTerm" />
+                    <img src="/images/essentials.jpg" alt="About LongTerm" />
                 </div>
             </section>
 
@@ -77,17 +77,17 @@ function About() {
                 <h3>Meet the Team</h3>
                 <div className="team-list">
                     <div className="team-member">
-                        <img src="/Public/images/IMG-20250412-WA0001.jpg" alt="Team Member 1" />
+                        <img src="/images/IMG-20250412-WA0001.jpg" alt="Team Member 1" />
                         <h4>George Matasi</h4>
                         <p>Founder & CEO</p>
                     </div>
                     <div className="team-member">
-                        <img src="/Public/images/IMG-20250412-WA0002.jpg" alt="Team Member 2" />
+                        <img src="/images/IMG-20250412-WA0002.jpg" alt="Team Member 2" />
                         <h4>George Matasi</h4>
                         <p>Head of Sales</p>
                     </div>
                     <div className="team-member">
-                        <img src="/Public/images/IMG-20250412-WA0003.jpg" alt="Team Member 3" />
+                        <img src="/images/IMG-20250412-WA0003.jpg" alt="Team Member 3" />
                         <h4>George Matasi</h4>
                         <p>Customer Support Lead</p>
                     </div>
