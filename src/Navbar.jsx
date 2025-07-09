@@ -7,7 +7,12 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="container">
-                <h1 className="logo">Longterm</h1>
+                <h1 className="logo logo-image-text">
+                    <span className="logo-text">LONGTERM POWER SOLUTIONS</span>
+                    <span className="logo-images-bg"></span>
+                </h1>
+            </div>
+            <div className="navbar-links-row">
                 <ul className="nav-links">
                     <li>
                         <Link to="/">Home</Link>

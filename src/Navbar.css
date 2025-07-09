@@ -1,26 +1,25 @@
 /* Navbar.css */
 .navbar {
     background: #2e3b49;
-    padding: 15px 20px;
+    padding: 15px 20px 0 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.container {
+.navbar-links-row {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: rgb(115, 142, 240);
-    font-size: 2.5rem;
-    font-weight: bold;
+    justify-content: center;
+    margin-top: 0px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
@@ -31,8 +30,74 @@
     color: white;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    padding: 6px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
 }
 
 .nav-links a:hover {
     text-decoration: underline;
+    background: rgba(115,142,240,0.12);
+    color: #ff9800;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo {
+    color: rgb(115, 142, 240);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.logo-image-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-right: 8px;
+    z-index: 2;
+}
+
+.logo-image-text .logo-text {
+    display: inline-block;
+    background: url('/Public/images/essentials.jpg') left center/33% 100% no-repeat,
+                url('/Public/images/drills.jpg') center center/33% 100% no-repeat,
+                url('/Public/images/solar.jpg') right center/34% 100% no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 2;
+    padding: 0 8px;
+}
+
+.logo-image-text .logo-images-bg {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .logo-image-text {
+        font-size: 1.1rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .nav-links {
+        gap: 16px;
+    }
+}
+
+/* Remove old navbar-products styles */
+.navbar-products, .navbar-product-img {
+    display: none !important;
 }

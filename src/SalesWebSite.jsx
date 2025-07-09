@@ -24,7 +24,7 @@ const productCategories = {
     { id: 10, name: 'Various Tools', image: '../public/images/Tools.jpg' },
     { id: 11, name: 'Drill Sets', image: '../public/images/drills.jpg' }
   ],
-  Other: [
+  Battery: [
     { id: 12, name: 'Battery', image: '../public/images/batterts ch.jpg' },
     { id: 13, name: 'PoshoMill', image: '../public/images/Poshomill.jpg' },
     { id: 14, name: 'Motor', image: '../public/images/motor.jpg' }

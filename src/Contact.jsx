@@ -8,6 +8,7 @@ const Contact = () => {
     phone: '',
     message: ''
   });
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,21 +18,50 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setStatus('Sending...');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        setStatus('Thank you for your message! We will get back to you soon.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setStatus('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      setStatus('Something went wrong. Please try again later.');
+    }
   };
 
   return (
     <div className="contact-container">
-      <div className="contact-hero">
-        <h1>Get In Touch For More Information</h1>
-        <p>We're here to help and answer any questions you might have</p>
-      </div>
+      {/* Hero Section */}
+      <section className="contact-hero">
+        <h1>Contact Us</h1>
+        <p>We're here to help and answer any questions you might have. Reach out to us and we'll respond as soon as we can.</p>
+      </section>
 
-      <div className="contact-wrapper">
+      {/* Main Contact Section */}
+      <section className="contact-main">
+        {/* Contact Info */}
+        <div className="contact-info">
+          <h2>Get in Touch</h2>
+          <p><strong>Email:</strong> info@longterm.com</p>
+          <p><strong>Phone:</strong> +254 716 597 568</p>
+          <p><strong>Address:</strong> 123 Main Street, Kansas City, MO</p>
+          <div className="contact-socials">
+            <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        {/* Contact Form */}
         <div className="contact-form-container">
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
@@ -45,7 +75,6 @@ const Contact = () => {
               />
               <span className="input-border"></span>
             </div>
-            
             <div className="form-group">
               <input
                 type="email"
@@ -57,8 +86,6 @@ const Contact = () => {
               />
               <span className="input-border"></span>
             </div>
-            
-            {/* Phone Number Field */}
             <div className="form-group">
               <input
                 type="tel"
@@ -70,7 +97,6 @@ const Contact = () => {
               />
               <span className="input-border"></span>
             </div>
-            
             <div className="form-group">
               <textarea
                 name="message"
@@ -82,16 +108,18 @@ const Contact = () => {
               ></textarea>
               <span className="input-border"></span>
             </div>
-            
             <button type="submit" className="submit-btn">
               <span>Send Message</span>
               <i className="fas fa-paper-plane"></i>
             </button>
+            {status && <div className="form-status">{status}</div>}
           </form>
         </div>
-      </div>
-      
-      {/* Footer remains the same */}
+      </section>
+
+      <footer className="contact-footer">
+        <p>&copy; 2025 LongTerm. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

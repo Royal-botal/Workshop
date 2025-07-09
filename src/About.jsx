@@ -1,20 +1,54 @@
 import React from 'react';
-import './About.css'; 
+import './About.css';
 
 function About() {
     return (
         <div className="about">
-            <div className="about-header">
-                <h2>About Us</h2>
-                <p>LongTerm is the premier source for quality tools. We specialize in Makita, Wasp and Wera and we stock over 10,000 different tools with over 25,000 available to order. You can shop with confidence knowing all of the tools we carry come with a lifetime manufacturer's warranty (with the exception of bits, tweezers, and torque screwdrivers).
+            {/* Hero Section */}
+            <section className="about-hero">
+                <div className="hero-overlay">
+                    <h1>Welcome to LongTerm</h1>
+                    <p>Your trusted partner for quality tools and exceptional service.</p>
+                    <a href="#services" className="cta-btn">Explore Our Services</a>
+                </div>
+            </section>
 
-Longterm was named a Greater Kansas City Chamber of Commerce 2024 Small Business Superstar.
+            {/* About Us Section */}
+            <section className="about-main">
+                <div className="about-content">
+                    <h2>About Us</h2>
+                    <p>LongTerm is the premier source for quality tools. We specialize in Makita, Wasp, and Wera, stocking over 10,000 different tools with over 25,000 available to order. Shop with confidence knowing all of the tools we carry come with a lifetime manufacturer's warranty (with the exception of bits, tweezers, and torque screwdrivers).</p>
+                    <p>LongTerm was named a Greater Kansas City Chamber of Commerce 2024 Small Business Superstar and is a Minority Business Enterprise certified by the government. We are committed to providing quality products and services tailored to our customers' needs.</p>
+                </div>
+                <div className="about-image">
+                    <img src="/Public/images/essentials.jpg" alt="About LongTerm" />
+                </div>
+            </section>
 
-LongTerm is a Minority Business Enterprise certified by the government.</p>
-                <p>This is a store that provides quality products to customers and quality services to customers' needs.</p>
-            </div>
+            {/* Our Values Section */}
+            <section className="about-values">
+                <h3>Our Values</h3>
+                <div className="values-list">
+                    <div className="value-item">
+                        <span role="img" aria-label="quality">🏆</span>
+                        <h4>Quality</h4>
+                        <p>We never compromise on the quality of our products and services.</p>
+                    </div>
+                    <div className="value-item">
+                        <span role="img" aria-label="integrity">🤝</span>
+                        <h4>Integrity</h4>
+                        <p>We build trust through transparency and ethical business practices.</p>
+                    </div>
+                    <div className="value-item">
+                        <span role="img" aria-label="innovation">💡</span>
+                        <h4>Innovation</h4>
+                        <p>We embrace new ideas to deliver the best solutions for our customers.</p>
+                    </div>
+                </div>
+            </section>
 
-            <div className="services">
+            {/* Services Section */}
+            <section className="services" id="services">
                 <h3>Our Services</h3>
                 <div className="service-cards">
                     <div className="service-card quality">
@@ -36,10 +70,32 @@ LongTerm is a Minority Business Enterprise certified by the government.</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            {/* Meet the Team Section */}
+            <section className="about-team">
+                <h3>Meet the Team</h3>
+                <div className="team-list">
+                    <div className="team-member">
+                        <img src="/Public/images/IMG-20250412-WA0001.jpg" alt="Team Member 1" />
+                        <h4>George Matasi</h4>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div className="team-member">
+                        <img src="/Public/images/IMG-20250412-WA0002.jpg" alt="Team Member 2" />
+                        <h4>George Matasi</h4>
+                        <p>Head of Sales</p>
+                    </div>
+                    <div className="team-member">
+                        <img src="/Public/images/IMG-20250412-WA0003.jpg" alt="Team Member 3" />
+                        <h4>George Matasi</h4>
+                        <p>Customer Support Lead</p>
+                    </div>
+                </div>
+            </section>
 
             <footer className="about-footer">
-                <p>&copy; 2025 Longterm. All rights reserved.</p>
+                <p>&copy; 2025 LongTerm. All rights reserved.</p>
             </footer>
         </div>
     );
